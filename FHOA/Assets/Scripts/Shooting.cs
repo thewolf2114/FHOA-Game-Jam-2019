@@ -11,6 +11,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;     // bullet which agent fires
     public GameObject bulletSpawnPoint; // point at which to spawn bullets from
     public GameObject gunAction;        // action of gun that slides back on fire
+    public GameObject fireParticle;     // visual effect that plays when player fires
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
 
