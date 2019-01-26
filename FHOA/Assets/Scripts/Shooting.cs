@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
 {
     // public variables
     public GameObject bulletPrefab;     // bullet which agent fires
+    public GameObject bulletSpawnPoint; // point at which to spawn bullets from
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
 
@@ -35,7 +36,7 @@ public class Shooting : MonoBehaviour
         if (Input.GetAxisRaw("Fire1") != 0 && canShoot)
         {
             // create instance of bullet
-            GameObject newBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * bulletVelocity, ForceMode.Impulse);
 
             // set gun to unable to fire
