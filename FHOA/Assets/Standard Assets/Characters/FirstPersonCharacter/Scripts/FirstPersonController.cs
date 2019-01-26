@@ -42,6 +42,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        // Property returning FPC's mouse look object
+        public MouseLook MouseLook
+        {
+            get { return m_MouseLook; }
+        }
+
         // Use this for initialization
         private void Start()
         {
