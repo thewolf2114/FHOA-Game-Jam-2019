@@ -14,7 +14,6 @@ public class Shooting : MonoBehaviour
     public GameObject gunAction;        // action of gun that slides back on fire
     public GameObject fireParticle;     // visual effect that plays when player fires
     public Text ammoCount;              // text object showing current ammo
-    public Text killCount;              // text object showing current number of kills
     public int maxAmmo = 50;            // number of bullets gun resets to after player reloads
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
@@ -31,6 +30,7 @@ public class Shooting : MonoBehaviour
     {
         // initialize player's gun to full magazine
         currAmmo = maxAmmo;
+        ammoCount.text = "Ammo: " + currAmmo;
 
         // save initial and firing positions of gun action
         actionStartPosition = gunAction.transform.localPosition;
@@ -67,6 +67,7 @@ public class Shooting : MonoBehaviour
 
             // decrement ammo count and set gun to unable to fire
             currAmmo--;
+            ammoCount.text = "Ammo: " + currAmmo;
             canShoot = false;
 
             // TEST: print current ammo in gun
@@ -80,8 +81,9 @@ public class Shooting : MonoBehaviour
         // if player presses reload button while not firing
         if (Input.GetKeyDown(KeyCode.R) && Input.GetAxisRaw("Fire1") == 0)
         {
-            // reset current ammo in gun
+            // reset current ammo
             currAmmo = maxAmmo;
+            ammoCount.text = "Ammo: " + currAmmo;
 
             // TODO: play reload sound effect
         }

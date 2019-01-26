@@ -355,6 +355,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!114 &711937920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 711937920, guid: 70416c2f72745494a92d5d82fc7a9a83,
+    type: 3}
+  m_PrefabInstance: {fileID: 4797554485483727328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1891577917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1891577917, guid: 70416c2f72745494a92d5d82fc7a9a83,
+    type: 3}
+  m_PrefabInstance: {fileID: 4797554485483727328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2067525914
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,5 +538,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 282250288, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
+      propertyPath: ammoCount
+      value: 
+      objectReference: {fileID: 711937920}
+    - target: {fileID: 282250288, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
+      propertyPath: killCount
+      value: 
+      objectReference: {fileID: 1891577917}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
