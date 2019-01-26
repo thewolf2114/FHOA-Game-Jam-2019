@@ -10,7 +10,6 @@ public class Shooting : MonoBehaviour
     // public variables
     public GameObject bulletPrefab;     // bullet which agent fires
     public GameObject bulletSpawnPoint; // point at which to spawn bullets from
-    public GameObject gunBarrel;        // barrel sub-object of the gun
     public GameObject gunAction;        // action of gun that slides back on fire
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
@@ -25,8 +24,8 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         // save initial and firing positions of gun action
-        actionStartPosition = gunAction.transform.position;
-        actionFirePosition = new Vector3(0, 0, 0);
+        actionStartPosition = gunAction.transform.localPosition;
+        actionFirePosition = new Vector3(actionStartPosition.x, actionStartPosition.y, -.01f);
     }
 
     // Update is called once per frame
@@ -52,10 +51,14 @@ public class Shooting : MonoBehaviour
             newBullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * bulletVelocity, ForceMode.Impulse);
 
             // move action back to fire position
-            gunAction.transform.position = actionFirePosition;
+            gunAction.transform.localPosition = actionFirePosition;
 
             // set gun to unable to fire
             canShoot = false;
         }
+        // otherwise (player isn't shooting)
+        else
+            // move action back to starting position
+            gunAction.transform.localPosition = actionStartPosition;
     }
 }
