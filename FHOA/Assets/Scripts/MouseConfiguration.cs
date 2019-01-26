@@ -31,6 +31,16 @@ public class MouseConfiguration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // if player activates either look inversion axis, reverse appropriate look sensitivity
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            fpsController.MouseLook.XSensitivity *= -1;
+            Debug.Log("x axis");
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            fpsController.MouseLook.YSensitivity *= -1;
+            Debug.Log("y axis");
+        }
     }
 }
