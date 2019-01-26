@@ -305,22 +305,13 @@ GameObject:
   m_Component:
   - component: {fileID: 858201706}
   - component: {fileID: 858201705}
-  - component: {fileID: 858201704}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &858201704
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858201703}
-  m_Enabled: 1
+  m_IsActive: 0
 --- !u!20 &858201705
 Camera:
   m_ObjectHideFlags: 0
@@ -397,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 4797554485201451503, guid: 70416c2f72745494a92d5d82fc7a9a83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3017354e-17
+      value: 0.053
       objectReference: {fileID: 0}
     - target: {fileID: 4797554485201451503, guid: 70416c2f72745494a92d5d82fc7a9a83,
         type: 3}
@@ -444,6 +435,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 282250288, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
+      propertyPath: fireParticle
+      value: 
+      objectReference: {fileID: 6094234746307244789, guid: 1dae2e70c56bef145817b9f429b2b6f1,
+        type: 3}
     - target: {fileID: 4797554485212237871, guid: 70416c2f72745494a92d5d82fc7a9a83,
         type: 3}
       propertyPath: m_WalkSpeed
