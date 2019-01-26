@@ -12,10 +12,12 @@ public class Shooting : MonoBehaviour
     public GameObject bulletSpawnPoint; // point at which to spawn bullets from
     public GameObject gunAction;        // action of gun that slides back on fire
     public GameObject fireParticle;     // visual effect that plays when player fires
+    public int maxAmmo = 50;            // number of bullets gun resets to after player reloads
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
 
     // private variables
+    int currAmmo = 0;                   // current number of shots in player's gun
     bool canShoot = true;               // flag determining whether player can fire bullet on given frame
     float fireFrameCounter = 0;         // counter aiding in fire rate
     Vector3 actionStartPosition;        // starting position of gun action
@@ -24,6 +26,9 @@ public class Shooting : MonoBehaviour
     // Called a frame before first Update()
     void Start()
     {
+        // initialize player's gun to full magazine
+        currAmmo = maxAmmo;
+
         // save initial and firing positions of gun action
         actionStartPosition = gunAction.transform.localPosition;
         actionFirePosition = new Vector3(actionStartPosition.x, actionStartPosition.y, -.01f);
@@ -44,8 +49,8 @@ public class Shooting : MonoBehaviour
             // increment timer with time between frames
             fireFrameCounter += Time.deltaTime;
 
-        // if player is firing
-        if (Input.GetAxisRaw("Fire1") != 0 && canShoot)
+        // if player is firing, can shoot, and has ammo to fire
+        if (Input.GetAxisRaw("Fire1") != 0 && canShoot && currAmmo > 0)
         {
             // fire bullet in direction player faces
             GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
@@ -57,12 +62,25 @@ public class Shooting : MonoBehaviour
             // move action back to fire position
             gunAction.transform.localPosition = actionFirePosition;
 
-            // set gun to unable to fire
+            // decrement ammo count and set gun to unable to fire
+            currAmmo--;
             canShoot = false;
+
+            // TEST: print current ammo in gun
+            Debug.Log(currAmmo);
         }
         // otherwise (player isn't shooting)
         else
             // move action back to starting position
             gunAction.transform.localPosition = actionStartPosition;
+
+        // if player presses reload button while not firing
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetAxisRaw("Fire1") == 0)
+        {
+            // reset current ammo in gun
+            currAmmo = maxAmmo;
+
+            // TODO: play reload sound effect
+        }
     }
 }
