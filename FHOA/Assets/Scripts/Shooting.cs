@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Basic shooting script for firing bullets from a gun
@@ -12,6 +13,8 @@ public class Shooting : MonoBehaviour
     public GameObject bulletSpawnPoint; // point at which to spawn bullets from
     public GameObject gunAction;        // action of gun that slides back on fire
     public GameObject fireParticle;     // visual effect that plays when player fires
+    public Text ammoCount;              // text object showing current ammo
+    public Text killCount;              // text object showing current number of kills
     public int maxAmmo = 50;            // number of bullets gun resets to after player reloads
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
