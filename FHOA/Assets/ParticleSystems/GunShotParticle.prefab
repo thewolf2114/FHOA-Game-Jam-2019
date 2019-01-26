@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
       propertyPath: m_Name
-      value: FireComplex
+      value: GunShotParticle
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,15 +69,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
       propertyPath: minDuration
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
       propertyPath: maxDuration
-      value: 0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
       propertyPath: multiplier
-      value: 0.15
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf495eacf58e31146ab012aa89ac68da, type: 3}

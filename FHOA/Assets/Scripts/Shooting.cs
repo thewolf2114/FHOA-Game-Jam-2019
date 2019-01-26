@@ -47,9 +47,12 @@ public class Shooting : MonoBehaviour
         // if player is firing
         if (Input.GetAxisRaw("Fire1") != 0 && canShoot)
         {
-            // create instance of bullet
+            // fire bullet in direction player faces
             GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * bulletVelocity, ForceMode.Impulse);
+
+            // create instance of fire visual effect
+            Instantiate(fireParticle, bulletSpawnPoint.transform.position, Quaternion.identity);
 
             // move action back to fire position
             gunAction.transform.localPosition = actionFirePosition;
