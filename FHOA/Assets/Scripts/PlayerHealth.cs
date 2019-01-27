@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip[] playerHurtSounds;    // array of sounds to play when player is hurt
     public AudioClip playerDeathSound;      // sound to play when player dies
     public GameObject enemyExplosion;
+    public GameObject deathScreen;
     public float immunityTimer;
 
     // private variables
@@ -69,7 +70,10 @@ public class PlayerHealth : MonoBehaviour
         if (currHealth <= 0)
         {
             // DUMMY CODE: debug a death log
-            Debug.Log("I have failed you ...");
+            //Debug.Log("I have failed you ...");
+
+            // diplay death screen
+            DisplayDeathScreen();
 
             // play death sound
             audioSource.PlayOneShot(playerDeathSound);
@@ -107,5 +111,19 @@ public class PlayerHealth : MonoBehaviour
             Instantiate(enemyExplosion, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void DisplayDeathScreen()
+    {
+        // pause the game
+        Time.timeScale = 0;
+
+        // activate the cursor
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = true;
+
+        // display the death screen
+        deathScreen.SetActive(true);
     }
 }
