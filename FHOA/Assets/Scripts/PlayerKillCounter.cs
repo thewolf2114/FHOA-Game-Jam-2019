@@ -10,7 +10,9 @@ using UnityEngine.UI;
 public class PlayerKillCounter : MonoBehaviour
 {
     // public variables
-    public Text killCounter;        // text displaying player's current number of kills
+    public Text killCounter;            // text displaying player's current number of kills
+    public AudioSource audioSource;     // source to play enemy death sounds from
+    public AudioClip enemyDeathSound;   // sound which plays when enemy dies
 
     // private variables
     int killCount = 0;              // current number of kills
@@ -38,5 +40,8 @@ public class PlayerKillCounter : MonoBehaviour
         // increment kill count
         killCount++;
         killCounter.text = "Kills: " + killCount;
+
+        // play enemy death sound effect
+        audioSource.PlayOneShot(enemyDeathSound);
     }
 }
