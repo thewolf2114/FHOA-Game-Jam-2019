@@ -1196,12 +1196,12 @@ PrefabInstance:
     - target: {fileID: 4343664099204052717, guid: 212ddce61dd115c4a82c25af3fb8d213,
         type: 3}
       propertyPath: zombieCount
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4343664099204052717, guid: 212ddce61dd115c4a82c25af3fb8d213,
         type: 3}
       propertyPath: spawnTimer
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4343664099204052717, guid: 212ddce61dd115c4a82c25af3fb8d213,
         type: 3}
