@@ -16,6 +16,7 @@ public class Shooting : MonoBehaviour
     public Text ammoCount;              // text object showing current ammo
     public AudioSource audioSource;     // source to play shooting sounds from
     public AudioClip shotSound;         // gun shot sound effect
+    public AudioClip reloadSound;       // reload sound effect
     public int maxAmmo = 50;            // number of bullets gun resets to after player reloads
     public float bulletVelocity = 10f;  // velocity at which bullet fires
     public float fireRate = .666f;      // time between shots
@@ -87,8 +88,8 @@ public class Shooting : MonoBehaviour
             currAmmo = maxAmmo;
             ammoCount.text = "Ammo: " + currAmmo;
 
-            // TODO: play reload sound effect
-
+            // play reload sound effect
+            audioSource.PlayOneShot(reloadSound);
         }
     }
 }
