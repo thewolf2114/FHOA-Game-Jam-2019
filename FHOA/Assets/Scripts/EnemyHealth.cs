@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
 {
     // public variables
     public int health = 3;      // number of shots enemy can take before dying
+    public GameObject explosion;
 
     // private variables
     PlayerKillCounter killCounter;  // used to increment player's kill counter upon enemy death
@@ -37,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
             if (health <= 0)
             {
                 // destroy agent
+                Instantiate(explosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
 
                 // increment player's kill count

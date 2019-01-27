@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite nearDeadPicture;          // profile image to use when player is near dead
     public AudioClip[] playerHurtSounds;    // array of sounds to play when player is hurt
     public AudioClip playerDeathSound;      // sound to play when player dies
+    public GameObject enemyExplosion;
     public float immunityTimer;
 
     // private variables
@@ -103,6 +104,7 @@ public class PlayerHealth : MonoBehaviour
             immune = true;
 
             // destroy the enemy
+            Instantiate(enemyExplosion, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
         }
     }
