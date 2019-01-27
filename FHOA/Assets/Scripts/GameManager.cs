@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // update the current zombie counter
+        currentZombieCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(currentZombieCount);
+
         if (currentTimer >= spawnTimer)
         {
             currentTimer = 0;
@@ -42,9 +46,6 @@ public class GameManager : MonoBehaviour
             // spawn the enemy at a spawn point
             Instantiate(enemy, spawnPoints[randomSpawn].transform.position, Quaternion.identity);
             enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(player.transform);
-
-            // increment the current zombie counter
-            currentZombieCount++;
 
             //set can spawn to false to space out the enemy spawning
             canSpawn = false;

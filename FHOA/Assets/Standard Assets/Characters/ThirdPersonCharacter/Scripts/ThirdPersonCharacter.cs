@@ -30,7 +30,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 
         public int health;
-        public GameObject gameManager;
 
 
 		void Start()
