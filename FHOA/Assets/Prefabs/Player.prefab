@@ -1679,6 +1679,7 @@ MonoBehaviour:
   ammoCount: {fileID: 0}
   audioSource: {fileID: 4797554485209119791}
   shotSound: {fileID: 8300000, guid: 858ac40139d4a034dad08d6cb5faac74, type: 3}
+  reloadSound: {fileID: 0}
   maxAmmo: 50
   bulletVelocity: 25
   fireRate: 0.1

@@ -231,12 +231,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 health--;
 
                 Destroy(collision.gameObject);
+
+                if (health <= 0)
+                {
+                    Destroy(gameObject);
+                }
             }
 
-            if (health == 0)
-            {
-                Destroy(gameObject);
-            }
+            
         }
     }
 }
