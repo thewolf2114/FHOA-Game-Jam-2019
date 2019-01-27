@@ -391,6 +391,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae6d0d9baa80fe94ca9c03532ef12f77, type: 3}
   - {fileID: 8300000, guid: ec3539e159d408f4a9966dba6b1f128e, type: 3}
   - {fileID: 8300000, guid: 8fa05278da997af419eae3cc75b78aa9, type: 3}
+--- !u!114 &1653704573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653704571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759d90a871cb3704a802cd5fda7ee338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killCounter: {fileID: 1891577917}
 --- !u!82 &1653704581
 AudioSource:
   m_ObjectHideFlags: 0
