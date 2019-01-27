@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 5
+  m_WalkSpeed: 10
   m_RunSpeed: 10
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
@@ -1692,7 +1692,7 @@ MonoBehaviour:
   gunAction: {fileID: 1428006382}
   fireParticle: {fileID: 6094234746307244789, guid: 1dae2e70c56bef145817b9f429b2b6f1,
     type: 3}
-  ammoCount: {fileID: 0}
+  ammoCount: {fileID: 711937920}
   audioSource: {fileID: 4797554485209119791}
   shotSound: {fileID: 8300000, guid: 858ac40139d4a034dad08d6cb5faac74, type: 3}
   reloadSound: {fileID: 0}
@@ -1730,3 +1730,9 @@ MonoBehaviour:
   normalProfile: {fileID: 21300000, guid: 50dc66494a2373d46adc421ff2d2f1fd, type: 3}
   hurtPicture: {fileID: 21300000, guid: f84e89bfcd114d54fa5370d42781a0d6, type: 3}
   nearDeadPicture: {fileID: 21300000, guid: 04fc0ad235fa7b241af5ea48fbd733ff, type: 3}
+  playerHurtSounds:
+  - {fileID: 8300000, guid: 6a7f38b76497ae040aaabad7bb9868ac, type: 3}
+  - {fileID: 8300000, guid: 5cf1d7f847c873444ac2869fdc1ea163, type: 3}
+  - {fileID: 8300000, guid: 1756a63777e6351408eaa85722dacd08, type: 3}
+  - {fileID: 8300000, guid: b5cc9a69ac1546e47aed79d5fa3e4a65, type: 3}
+  playerDeathSound: {fileID: 8300000, guid: fc0b1f6365e42894aab73d5e7abd621f, type: 3}
