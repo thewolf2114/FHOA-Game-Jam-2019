@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileLifespan: 3
+  bloodyShotParticle: {fileID: 100010, guid: 4291e51ce1fb35e49818d445627f2bab, type: 3}

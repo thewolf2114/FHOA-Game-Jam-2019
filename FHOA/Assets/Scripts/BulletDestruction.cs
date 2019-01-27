@@ -10,6 +10,7 @@ public class BulletDestruction : MonoBehaviour
 {
     // public variables
     public float projectileLifespan;        // time before a bullet destroys itself
+    public GameObject bloodyShotParticle;   // particle effect that plays when bullet hits 
 
     // private variables
     float lifeCounter = 0;                  // counter incrementing age of bullet (before it dies)
@@ -33,6 +34,14 @@ public class BulletDestruction : MonoBehaviour
     /// <param name="collision">collider of the other object</param>
     void OnCollisionEnter(Collision collision)
     {
+        // if bullet collides with a ghoul
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // create instance of missed shot particle effect
+            Vector3 fireSpawnPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            Instantiate(bloodyShotParticle, fireSpawnPoint, Quaternion.identity);
+        }
+
         // destroy projectile
         Destroy(gameObject);
     }

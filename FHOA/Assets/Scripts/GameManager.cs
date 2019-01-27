@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int zombieCount;
     public float spawnTimer;
     public GameObject player;
+    public GameObject corpseTarget;
     int currentZombieCount = 0;
     float currentTimer = 0;
     bool canSpawn = true;
@@ -45,7 +46,13 @@ public class GameManager : MonoBehaviour
 
             // spawn the enemy at a spawn point
             Instantiate(enemy, spawnPoints[randomSpawn].transform.position, Quaternion.identity);
-            enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(player.transform);
+
+            // set enemy's random target
+            float randTarget = Random.Range(0, 1);
+            if (randTarget < .95)
+                enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(player.transform);
+            else
+                enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(corpseTarget.transform);
 
             // spawn the fire effect
             Instantiate(fireComplexEffect, spawnPoints[randomSpawn].transform.position, Quaternion.identity);
