@@ -418,6 +418,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 735302901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1006624766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 113348, guid: 271edc4a5322a4a4b9845d4d68390beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1231654910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145927483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1185,5 +1191,10 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[6]
       value: 
       objectReference: {fileID: 1523510529}
+    - target: {fileID: 4343664099204052717, guid: 212ddce61dd115c4a82c25af3fb8d213,
+        type: 3}
+      propertyPath: corpseTarget
+      value: 
+      objectReference: {fileID: 1006624766}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212ddce61dd115c4a82c25af3fb8d213, type: 3}
