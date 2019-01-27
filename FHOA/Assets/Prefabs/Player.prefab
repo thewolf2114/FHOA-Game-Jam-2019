@@ -1677,6 +1677,8 @@ MonoBehaviour:
   fireParticle: {fileID: 6094234746307244789, guid: 1dae2e70c56bef145817b9f429b2b6f1,
     type: 3}
   ammoCount: {fileID: 0}
+  audioSource: {fileID: 4797554485209119791}
+  shotSound: {fileID: 8300000, guid: 858ac40139d4a034dad08d6cb5faac74, type: 3}
   maxAmmo: 50
   bulletVelocity: 25
   fireRate: 0.1
