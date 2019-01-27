@@ -24,7 +24,6 @@ public class BulletDestruction : MonoBehaviour
         if (lifeCounter >= projectileLifespan)
         {
             Destroy(gameObject);
-            Debug.Log("time death");
         }
     }
 
@@ -36,6 +35,5 @@ public class BulletDestruction : MonoBehaviour
     {
         // destroy projectile
         Destroy(gameObject);
-        Debug.Log("collision death");
     }
 }

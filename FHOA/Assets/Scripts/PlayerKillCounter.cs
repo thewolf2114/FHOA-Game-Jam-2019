@@ -24,14 +24,6 @@ public class PlayerKillCounter : MonoBehaviour
         killCounter.text = "Kills: " + killCount;
     }
 
-    // Update() calls itself once per frame
-    void Update()
-    {
-        // TEST: if player presses 'l', increment kill count
-        if (Input.GetKeyDown(KeyCode.L))
-            IncrementKillCount();
-    }
-
     /// <summary>
     /// Increments kill count
     /// </summary>

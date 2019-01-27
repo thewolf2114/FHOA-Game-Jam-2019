@@ -37,10 +37,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TEST: hurt player on pressing 'k'
-        if (Input.GetKeyDown(KeyCode.K))
-            DeductHealth(10);
-
         // check for immunity
         if (immune)
         {
