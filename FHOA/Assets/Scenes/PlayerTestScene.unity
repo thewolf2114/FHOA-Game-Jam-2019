@@ -322,19 +322,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ae6d0d9baa80fe94ca9c03532ef12f77, type: 3}
   - {fileID: 8300000, guid: ec3539e159d408f4a9966dba6b1f128e, type: 3}
   - {fileID: 8300000, guid: 8fa05278da997af419eae3cc75b78aa9, type: 3}
---- !u!114 &1653704573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653704571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 759d90a871cb3704a802cd5fda7ee338, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killCounter: {fileID: 1891577917}
+  - {fileID: 8300000, guid: a811e4c5e0176084fa2c5a7757bcd153, type: 3}
 --- !u!82 &1653704581
 AudioSource:
   m_ObjectHideFlags: 0
@@ -614,10 +602,50 @@ PrefabInstance:
       propertyPath: reloadSound
       value: 
       objectReference: {fileID: 8300000, guid: 1c422b49f8d409b40b64dd3f2d3a5835, type: 3}
+    - target: {fileID: 282250288, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1653704581}
     - target: {fileID: 4797554485209119791, guid: 70416c2f72745494a92d5d82fc7a9a83,
         type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerHurtSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerDeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fc0b1f6365e42894aab73d5e7abd621f, type: 3}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerHurtSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a7f38b76497ae040aaabad7bb9868ac, type: 3}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerHurtSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cf1d7f847c873444ac2869fdc1ea163, type: 3}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerHurtSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1756a63777e6351408eaa85722dacd08, type: 3}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: playerHurtSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b5cc9a69ac1546e47aed79d5fa3e4a65, type: 3}
+    - target: {fileID: 7791090797815968383, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1653704581}
+    m_RemovedComponents:
+    - {fileID: 4797554485209119791, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}

@@ -9,22 +9,26 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     // public variables
-    public Image healthBar;             // scaling bar indicating player health
-    public Image profilePicture;        // profile picture ui element
-    public Sprite normalProfile;        // profile image to use when player is healthy
-    public Sprite hurtPicture;          // profile image to use when player is hurt
-    public Sprite nearDeadPicture;      // profile image to use when player is near dead
+    public Image healthBar;                 // scaling bar indicating player health
+    public Image profilePicture;            // profile picture ui element
+    public Sprite normalProfile;            // profile image to use when player is healthy
+    public Sprite hurtPicture;              // profile image to use when player is hurt
+    public Sprite nearDeadPicture;          // profile image to use when player is near dead
+    public AudioClip[] playerHurtSounds;    // array of sounds to play when player is hurt
+    public AudioClip playerDeathSound;      // sound to play when player dies
 
     // private variables
     int maxHealth = 100;                // max health of player character
     int currHealth = 100;               // current health of the player character
     RectTransform scalingHealthBar;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        // retrieve scaling info from player's health bar
+        // retrieve proper references to components
         scalingHealthBar = healthBar.GetComponent<RectTransform>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,8 +52,13 @@ public class PlayerHealth : MonoBehaviour
 
         // if player's health drops below 0, kill player
         if (currHealth <= 0)
+        {
             // DUMMY CODE: debug a death log
             Debug.Log("I have failed you ...");
+
+            // play death sound
+            audioSource.PlayOneShot(playerDeathSound);
+        }
         // otherwise (player is still alive)
         else
         {
@@ -63,6 +72,10 @@ public class PlayerHealth : MonoBehaviour
                 profilePicture.sprite = hurtPicture;
             else
                 profilePicture.sprite = normalProfile;
+
+            // play random hurt sound effect
+            int hurtSoundIndex = Random.Range(0, playerHurtSounds.Length);
+            audioSource.PlayOneShot(playerHurtSounds[hurtSoundIndex]);
         }
     }
 }
