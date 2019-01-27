@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-	[RequireComponent(typeof(Rigidbody))]
-	[RequireComponent(typeof(CapsuleCollider))]
-	[RequireComponent(typeof(Animator))]
-	public class ThirdPersonCharacter : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(CapsuleCollider))]
+    [RequireComponent(typeof(Animator))]
+    public class ThirdPersonCharacter : MonoBehaviour
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
@@ -28,9 +28,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
-
-        public int health;
-
 
 		void Start()
 		{
@@ -223,22 +220,5 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag == "Bullet")
-            {
-                health--;
-
-                Destroy(collision.gameObject);
-
-                if (health <= 0)
-                {
-                    Destroy(gameObject);
-                }
-            }
-
-            
-        }
     }
 }

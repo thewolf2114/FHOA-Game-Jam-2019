@@ -35,7 +35,7 @@ public class PlayerKillCounter : MonoBehaviour
     /// <summary>
     /// Increments kill count
     /// </summary>
-    void IncrementKillCount()
+    public void IncrementKillCount()
     {
         // increment kill count
         killCount++;
