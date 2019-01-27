@@ -53,8 +53,8 @@ public class PlayerHealth : MonoBehaviour
         // otherwise (player is still alive)
         else
         {
-            // TODO: scale health bar height
-            scalingHealthBar.localScale = new Vector3(1, (float)currHealth / 100, 1);
+            // scale health bar size
+            scalingHealthBar.localScale = new Vector3((float)currHealth / 100, (float)currHealth / 100, 1);
 
             // update profile picture as appropriate
             if (currHealth <= 20)
