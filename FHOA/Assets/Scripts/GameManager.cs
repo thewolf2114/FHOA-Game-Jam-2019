@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     {
         // update the current zombie counter
         currentZombieCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log(currentZombieCount);
 
         if (currentTimer >= spawnTimer)
         {
