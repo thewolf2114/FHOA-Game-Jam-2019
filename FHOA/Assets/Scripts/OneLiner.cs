@@ -20,13 +20,14 @@ public class OneLiner : MonoBehaviour
         audioSource.PlayOneShot(openingOneLiners[oneLinerIndex]);
     }
 
-    /// <summary>
-    /// Play a given one liner from the player's audio source
-    /// </summary>
-    /// <param name="sound"></param>
-    void PlayOneLiner(AudioClip sound)
+    // Called once per frame
+    void Update()
     {
-        // play given one-liner from audio source
-        audioSource.PlayOneShot(sound);
+        // if player presses 'one-liner' button, play random one liner
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            int oneLinerIndex = Random.Range(0, openingOneLiners.Length - 1);
+            audioSource.PlayOneShot(openingOneLiners[oneLinerIndex]);
+        }
     }
 }
