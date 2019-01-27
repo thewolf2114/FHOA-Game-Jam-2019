@@ -7,6 +7,7 @@ public class ButtonSelection : MonoBehaviour
 {
     public GameObject mainMenu;             // Holds the MainMenu canvas
     public GameObject helpMenu;             // Holds the HelpMenu canvas
+    public GameObject creditsMenu;          // Holds the Credits canvas
 
     /// <summary>
     /// Used for starting the game
@@ -32,7 +33,20 @@ public class ButtonSelection : MonoBehaviour
             mainMenu.SetActive(true);
             helpMenu.SetActive(false);
         }
+    }
 
+    public void CreditsMenu()
+    {
+        if (helpMenu.activeSelf == true)
+        {
+            creditsMenu.SetActive(true);
+            helpMenu.SetActive(false);
+        }
+        else if (creditsMenu.activeSelf == true)
+        {
+            helpMenu.SetActive(true);
+            creditsMenu.SetActive(false);
+        }
     }
 
     /// <summary>
