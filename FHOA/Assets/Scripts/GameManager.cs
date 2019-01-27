@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     float currentTimer = 0;
     bool canSpawn = true;
 
+    public int CurrentZombieCount
+    {
+        get { return currentZombieCount; }
+        set { currentZombieCount -= value; }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

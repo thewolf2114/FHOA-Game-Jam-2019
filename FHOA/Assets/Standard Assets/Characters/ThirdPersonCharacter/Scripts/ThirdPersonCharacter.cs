@@ -29,6 +29,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+        public int health;
+        public GameObject gameManager;
+
 
 		void Start()
 		{
@@ -221,5 +224,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
-	}
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Bullet")
+            {
+                health--;
+
+                Destroy(collision.gameObject);
+            }
+
+            if (health == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

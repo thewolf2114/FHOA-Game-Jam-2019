@@ -606,6 +606,9 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 2
   m_AnimSpeedMultiplier: 2
   m_GroundCheckDistance: 0.2
+  health: 3
+  gameManager: {fileID: 4488768096065610919, guid: 212ddce61dd115c4a82c25af3fb8d213,
+    type: 3}
 --- !u!1 &113866
 GameObject:
   m_ObjectHideFlags: 0
