@@ -5,27 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
-    public void OnPlayButtonClick()
+    private void Update()
     {
-        // reset the time scale
-        Time.timeScale = 1;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1;
 
-        // turn off the death screen
-        gameObject.SetActive(false);
+            SceneManager.LoadScene("Gameplay");
+        }
 
-        // restart the game
-        SceneManager.LoadScene("Gameplay");
-    }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Time.timeScale = 1;
 
-    public void OnQuitButtonClick()
-    {
-        // reset time scale
-        Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
-        // turn off the death screen
-        gameObject.SetActive(false);
-
-        // go to the main menu
-        SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

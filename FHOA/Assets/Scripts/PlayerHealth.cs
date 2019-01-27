@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     float currentImmunityTime = 0;
     RectTransform scalingHealthBar;
     AudioSource audioSource;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -118,11 +119,6 @@ public class PlayerHealth : MonoBehaviour
 
         // pause the game
         Time.timeScale = 0;
-
-        // activate the cursor
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.lockState = CursorLockMode.Confined;
-        //Cursor.visible = true;
 
         // display the death screen
         deathScreen.SetActive(true);
