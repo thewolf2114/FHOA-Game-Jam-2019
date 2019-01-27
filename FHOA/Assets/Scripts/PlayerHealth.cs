@@ -103,7 +103,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && !immune)
         {
             // deduct health and become immune
-            DeductHealth(30);
+            DeductHealth(15);
             immune = true;
 
             // destroy the enemy
