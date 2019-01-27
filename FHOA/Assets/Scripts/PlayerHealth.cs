@@ -74,7 +74,7 @@ public class PlayerHealth : MonoBehaviour
                 profilePicture.sprite = normalProfile;
 
             // play random hurt sound effect
-            int hurtSoundIndex = Random.Range(0, playerHurtSounds.Length);
+            int hurtSoundIndex = Random.Range(0, playerHurtSounds.Length - 1);
             audioSource.PlayOneShot(playerHurtSounds[hurtSoundIndex]);
         }
     }
