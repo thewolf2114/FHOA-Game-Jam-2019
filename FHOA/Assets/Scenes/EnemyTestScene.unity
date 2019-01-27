@@ -344,6 +344,11 @@ PrefabInstance:
       propertyPath: ammoCount
       value: 
       objectReference: {fileID: 1852922453}
+    - target: {fileID: 3885460802690881747, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: immunityTimer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 772810491, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

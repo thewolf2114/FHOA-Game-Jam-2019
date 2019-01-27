@@ -1384,7 +1384,7 @@ GameObject:
   - component: {fileID: 3885460802690881747}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1736,3 +1736,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1756a63777e6351408eaa85722dacd08, type: 3}
   - {fileID: 8300000, guid: b5cc9a69ac1546e47aed79d5fa3e4a65, type: 3}
   playerDeathSound: {fileID: 8300000, guid: fc0b1f6365e42894aab73d5e7abd621f, type: 3}
+  immunityTimer: 0

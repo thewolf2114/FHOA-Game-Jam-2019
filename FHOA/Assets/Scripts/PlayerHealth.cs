@@ -16,10 +16,13 @@ public class PlayerHealth : MonoBehaviour
     public Sprite nearDeadPicture;          // profile image to use when player is near dead
     public AudioClip[] playerHurtSounds;    // array of sounds to play when player is hurt
     public AudioClip playerDeathSound;      // sound to play when player dies
+    public float immunityTimer;
 
     // private variables
     int maxHealth = 100;                // max health of player character
     int currHealth = 100;               // current health of the player character
+    bool immune = false;
+    float currentImmunityTime = 0;
     RectTransform scalingHealthBar;
     AudioSource audioSource;
 
@@ -37,6 +40,21 @@ public class PlayerHealth : MonoBehaviour
         // TEST: hurt player on pressing 'k'
         if (Input.GetKeyDown(KeyCode.K))
             DeductHealth(10);
+
+        // check for immunity
+        if (immune)
+        {
+            // add time to the current immunity time
+            currentImmunityTime += Time.deltaTime;
+
+            // if the current immunity time surpasses the immunity timer
+            // reset the current immunity time to 0 and turn off immunity
+            if (currentImmunityTime >= immunityTimer)
+            {
+                currentImmunityTime = 0;
+                immune = false;
+            }
+        }
     }
 
     /// <summary>
@@ -45,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
     /// if appropriate.
     /// </summary>
     /// <param name="damage">damage dealt to player</param>
-    void DeductHealth(int damage)
+    public void DeductHealth(int damage)
     {
         // deduct damage from health
         currHealth -= damage;
@@ -76,6 +94,20 @@ public class PlayerHealth : MonoBehaviour
             // play random hurt sound effect
             int hurtSoundIndex = Random.Range(0, playerHurtSounds.Length - 1);
             audioSource.PlayOneShot(playerHurtSounds[hurtSoundIndex]);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // if the enemy touches you and youre not immune
+        if (collision.gameObject.tag == "Enemy" && !immune)
+        {
+            // deduct health and become immune
+            DeductHealth(30);
+            immune = true;
+
+            // destroy the enemy
+            Destroy(collision.gameObject);
         }
     }
 }
