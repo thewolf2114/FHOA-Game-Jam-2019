@@ -35,7 +35,13 @@ public class EnemyHealth : MonoBehaviour
             // destroy bullet and agent if appropriate
             Destroy(collision.gameObject);
             if (health <= 0)
+            {
+                // destroy agent
                 Destroy(gameObject);
+
+                // increment player's kill count
+                killCounter.IncrementKillCount();
+            }
         }
     }
 
@@ -44,8 +50,7 @@ public class EnemyHealth : MonoBehaviour
     /// </summary>
     void OnDestroy()
     {
-        // TODO: increment player's kill counter
-
         // TODO: create instance of death explosion
+
     }
 }
