@@ -418,12 +418,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 735302901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &922362225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 927764861, guid: 70416c2f72745494a92d5d82fc7a9a83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480945680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1006624766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 113348, guid: 271edc4a5322a4a4b9845d4d68390beb,
     type: 3}
   m_PrefabInstance: {fileID: 1231654910}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1006624767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006624766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e57b491c8cf43419577ed08e7c2a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyExplosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+  healthBar: {fileID: 922362225}
+  enemyDamage: 8
 --- !u!1001 &1145927483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -635,6 +662,16 @@ PrefabInstance:
     - target: {fileID: 772810490, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181464670742133465, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498304742211177546, guid: 70416c2f72745494a92d5d82fc7a9a83,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70416c2f72745494a92d5d82fc7a9a83, type: 3}

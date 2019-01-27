@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite nearDeadPicture;          // profile image to use when player is near dead
     public AudioClip[] playerHurtSounds;    // array of sounds to play when player is hurt
     public AudioClip playerDeathSound;      // sound to play when player dies
+    public AudioClip corpseHurtSound;       // sound to play when corpse is damaged
     public GameObject enemyExplosion;
     public GameObject deathScreen;
     public float immunityTimer;
@@ -74,9 +75,6 @@ public class PlayerHealth : MonoBehaviour
 
             // diplay death screen
             DisplayDeathScreen();
-
-            // play death sound
-            audioSource.PlayOneShot(playerDeathSound);
         }
         // otherwise (player is still alive)
         else
@@ -115,6 +113,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void DisplayDeathScreen()
     {
+        // play death sound
+        audioSource.PlayOneShot(playerDeathSound);
+
         // pause the game
         Time.timeScale = 0;
 
@@ -125,5 +126,14 @@ public class PlayerHealth : MonoBehaviour
 
         // display the death screen
         deathScreen.SetActive(true);
+    }
+
+    /// <summary>
+    /// Plays corpse hurt sound effect from player's audio source
+    /// </summary>
+    public void PlayCorpseHurtSound()
+    {
+        // play sound
+        audioSource.PlayOneShot(corpseHurtSound);
     }
 }

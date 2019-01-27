@@ -46,13 +46,4 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
-
-    /// <summary>
-    /// Called when object is destroyed
-    /// </summary>
-    void OnDestroy()
-    {
-        // TODO: create instance of death explosion
-
-    }
 }

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float spawnTimer;
     public GameObject player;
     public GameObject corpseTarget;
+    public float chanceToTargetPlayer = .95f;
     int currentZombieCount = 0;
     float currentTimer = 0;
     bool canSpawn = true;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
 
             // set enemy's random target
             float randTarget = Random.Range(0, 1);
-            if (randTarget < .95)
+            if (randTarget < chanceToTargetPlayer)
                 enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(player.transform);
             else
                 enemy.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().SetTarget(corpseTarget.transform);
